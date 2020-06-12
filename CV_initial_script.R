@@ -2,7 +2,7 @@
 
 setwd("~/Github/CV/")
 
-pdf_filename = paste0("Benedict_Monteiro_CV_",Sys.Date(),".pdf")
+pdf_filename = paste0("Benedict_Monteiro_CV.pdf")
 
 if(file.exists(pdf_filename)) unlink(pdf_filename, force = T)
 
@@ -39,4 +39,9 @@ rmarkdown::render("cv_mine.rmd",
 # Convert to PDF using Pagedown
 pagedown::chrome_print(input = tmp_html_cv_loc,
                        output = pdf_filename)
+
+
+
+file.copy(from = "cv.html", to = "../benedict909.github.io/index.html", overwrite = T)
+
 

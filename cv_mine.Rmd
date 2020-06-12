@@ -9,7 +9,7 @@ output:
   pagedown::html_resume:
     css: ['dd_cv.css', 'resume']
     self_contained: true
-geometry: "left=2cm,right=2cm,top=0cm,bottom=2cm"
+# geometry: "left=2cm,right=2cm,top=0cm,bottom=2cm"
 ---
 
 ```{r, include=FALSE}
@@ -55,9 +55,9 @@ datadrivencv::build_network_logo(CV$entries_data)
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this CV online with links at _nickstrayer.me/datadrivencv/_")
+  cat("View this CV online with links [here](https://benedict909.github.io/)")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf)")
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/benedict909/CV/raw/master/Benedict_Monteiro_CV_2020-06-12.pdf)")
 }
 ```
 
