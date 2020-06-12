@@ -111,7 +111,7 @@ CV %<>% print_section('research_positions')
 
 
 
-Industry Experience {data-icon=suitcase}
+Work Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
 ::: aside
