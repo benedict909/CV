@@ -1,6 +1,6 @@
 ---
-title: "Nick Strayer's CV"
-author: Nick Strayer
+title: "Benedict Monteiro's CV"
+author: Benedict Monteiro
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
@@ -18,13 +18,11 @@ knitr::opts_chunk$set(
 )
 
 library(magrittr) # For the pipe
-source("CV_printing_functions.R")
+source("cv_printing_functions.r")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/14MQICF2F8-vf8CKPF1m4lyGKO6_thG-4aSwat1e2TWc",  
-  pdf_location = "https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf",
-  html_location = "nickstrayer.me/cv/",
+  data_location = "https://docs.google.com/spreadsheets/d/1WC2VQGbxqxsNcU06x1DMvFBV2AQZg1BCzF26pKs5qCE/edit?usp=sharing",  
   pdf_mode = params$pdf_mode
 )
 
@@ -32,8 +30,15 @@ CV <- create_CV_object(
 
 
 ```{r}
-# Add some conditional CSS if in PDF mode needed due to quirks in chrome print rendering
-CV %>% set_style()
+# When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
+if(params$pdf_mode) {
+    cat("
+<style>
+:root{
+  --decorator-outer-offset-left: -6.5px;
+}
+</style>")
+}
 ```
 
 
@@ -48,7 +53,11 @@ datadrivencv::build_network_logo(CV$entries_data)
 
 
 ```{r}
-CV %>% print_link_to_other_format()
+if(params$pdf_mode){
+  cat("View this CV online with links at _nickstrayer.me/datadrivencv/_")
+} else {
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf)")
+}
 ```
 
 Contact {#contact}
@@ -74,7 +83,7 @@ Disclaimer {#disclaimer}
 
 Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
-The source code is available [on github.com/nstrayer/cv](https://github.com/nstrayer/cv).
+The source code is available [on github.com/nstrayer/cv](https://github.com/benedict909/CV).
 
 Last updated on `r Sys.Date()`.
 
@@ -83,7 +92,7 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Nick Strayer {#title}
+Benedict Monteiro {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -111,7 +120,7 @@ CV %<>% print_section('research_positions')
 
 
 
-Work Experience {data-icon=suitcase}
+Industry Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
 ::: aside
@@ -192,3 +201,4 @@ CV %<>% print_section('academic_articles')
 ```{r}
 CV %<>% print_links()
 ```
+
