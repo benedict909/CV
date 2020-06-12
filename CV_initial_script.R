@@ -10,5 +10,29 @@ datadrivencv::use_datadriven_cv(
   data_location = "https://docs.google.com/spreadsheets/d/1WC2VQGbxqxsNcU06x1DMvFBV2AQZg1BCzF26pKs5qCE/edit?usp=sharing",
   # pdf_location = "https://github.com/benedict909/cv/cv.pdf",
   # html_location = "nickstrayer.me/cv/",
-  source_location = "https://github.com/benedict909/CV"
+  source_location = "https://github.com/benedict909/CV",
+  open_files = F
 )
+
+
+# This script builds both the HTML and PDF versions of your CV
+
+# If you wanted to speed up rendering for googlesheets driven CVs you could use
+# this script to cache a version of the CV_Printer class with data already
+# loaded and load the cached version in the .Rmd instead of re-fetching it twice
+# for the HTML and PDF rendering. This exercise is left to the reader.
+
+# Knit the HTML version
+rmarkdown::render("cv_mine.rmd",
+                  params = list(pdf_mode = FALSE),
+                  output_file = "cv.html")
+
+# Knit the PDF version to temporary html location
+tmp_html_cv_loc <- fs::file_temp(ext = ".html")
+rmarkdown::render("cv_mine.rmd",
+                  params = list(pdf_mode = TRUE),
+                  output_file = tmp_html_cv_loc)
+
+# Convert to PDF using Pagedown
+pagedown::chrome_print(input = tmp_html_cv_loc,
+                       output = paste0("Benedict_Monteiro_CV_",Sys.Date(),".pdf"))
