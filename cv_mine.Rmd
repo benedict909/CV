@@ -1,5 +1,5 @@
 ---
-title: "\\vspace{-30mm} Benedict Monteiro's CV"
+title: "Benedict Monteiro's CV"
 author: Benedict Monteiro
 date: "`r Sys.Date()`"
 params:
@@ -9,6 +9,7 @@ output:
   pagedown::html_resume:
     css: ['dd_cv.css', 'resume']
     self_contained: true
+geometry: "left=2cm,right=2cm,top=0cm,bottom=2cm"
 ---
 
 ```{r, include=FALSE}
@@ -91,8 +92,7 @@ Last updated on `r Sys.Date()`.
 
 Main
 ================================================================================
-
-\vspace*{-30mm} Benedict Monteiro {#title}
+\vspace{-30mm} Benedict Monteiro {#title}
 --------------------------------------------------------------------------------
 
 ```{r}

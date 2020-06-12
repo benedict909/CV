@@ -1,9 +1,12 @@
 # CV R script 
 
-# devtools::install_github("nstrayer/datadrivencv")
-
 setwd("~/Github/CV/")
 
+pdf_filename = paste0("Benedict_Monteiro_CV_",Sys.Date(),".pdf")
+
+if(file.exists(pdf_filename)) unlink(pdf_filename, force = T)
+
+# devtools::install_github("nstrayer/datadrivencv")
 # run ?datadrivencv::use_datadriven_cv to see more details
 datadrivencv::use_datadriven_cv(
   full_name = "Benedict Monteiro",
@@ -35,4 +38,5 @@ rmarkdown::render("cv_mine.rmd",
 
 # Convert to PDF using Pagedown
 pagedown::chrome_print(input = tmp_html_cv_loc,
-                       output = paste0("Benedict_Monteiro_CV_",Sys.Date(),".pdf"))
+                       output = pdf_filename)
+
