@@ -55,7 +55,7 @@ datadrivencv::build_network_logo(CV$entries_data)
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this CV online with links [here](https://benedict909.github.io/)")
+  cat("View this CV online [here](https://benedict909.github.io/)")
 } else {
   cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/benedict909/CV/raw/master/Benedict_Monteiro_CV_2020-06-12.pdf)")
 }
@@ -95,11 +95,12 @@ Main
 \vspace{-30mm} Benedict Monteiro {#title}
 --------------------------------------------------------------------------------
 
-```{r}
-# Note the special double pipe so we modify the CV object in place
-CV %<>% print_text_block("intro") 
-```
+<!-- # ```{r} -->
+<!-- # # Note the special double pipe so we modify the CV object in place -->
+<!-- # CV %<>% print_text_block("intro")  -->
+<!-- # ``` -->
 
+<!-- find data-icons here: https://fontawesome.com/icons -->
 
 
 Education {data-icon=graduation-cap data-concise=true}
@@ -139,12 +140,12 @@ CV %<>% print_section('research_positions')
 <!-- <br> -->
 
 
-<!-- Academic References {data-icon=chalkboard-teacher} -->
-<!-- -------------------------------------------------------------------------------- -->
+Teaching Experience {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
 
-<!-- ```{r} -->
-<!-- CV %<>% print_section('teaching_positions') -->
-<!-- ``` -->
+```{r}
+CV %<>% print_section('teaching_positions')
+```
 
 
 
