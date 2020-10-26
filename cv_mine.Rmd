@@ -57,7 +57,7 @@ datadrivencv::build_network_logo(CV$entries_data)
 if(params$pdf_mode){
   cat("View this CV online [here](https://benedict909.github.io/)")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/benedict909/CV/raw/master/Benedict_Monteiro_CV_2020-06-12.pdf)")
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/benedict909/CV/raw/master/Benedict_Monteiro_CV.pdf)")
 }
 ```
 

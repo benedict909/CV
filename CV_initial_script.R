@@ -47,4 +47,4 @@ pagedown::chrome_print(input = tmp_html_cv_loc,
 
 file.copy(from = "cv.html", to = "../benedict909.github.io/index.html", overwrite = T)
 
-# now push to master using github desktop app 
+# now push to master using github desktop app on both repos 
