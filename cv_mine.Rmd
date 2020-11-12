@@ -9,7 +9,7 @@ output:
   pagedown::html_resume:
     css: ['dd_cv.css', 'resume']
     self_contained: true
-# geometry: "left=2cm,right=2cm,top=0cm,bottom=2cm"
+geometry: "left=0cm,right=0cm,top=0cm,bottom=0cm"
 ---
 
 ```{r, include=FALSE}

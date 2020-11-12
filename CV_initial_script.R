@@ -2,7 +2,18 @@
 
 setwd("~/Github/CV/")
 
-pdf_filename = paste0("Benedict_Monteiro_CV.pdf")
+CV_type = c("normal", "all_exams")[2]
+
+if(CV_type == "normal"){
+  pdf_filename = paste0("Benedict_Monteiro_CV.pdf")
+  gsheets_link = "https://docs.google.com/spreadsheets/d/1WC2VQGbxqxsNcU06x1DMvFBV2AQZg1BCzF26pKs5qCE/edit?usp=sharing"
+}
+
+if(CV_type == "all_exams"){
+  pdf_filename = paste0("Benedict_Monteiro_CV_all_exams.pdf")
+  gsheets_link = "https://docs.google.com/spreadsheets/d/1wLh4dEm8ZeTY_T68b5-7iaN4jLkzOvnEZ8X9INsQbGk/edit?usp=sharing"
+  
+}
 
 if(file.exists(pdf_filename)) unlink(pdf_filename, force = T)
 
@@ -13,11 +24,11 @@ if(file.exists(pdf_filename)) unlink(pdf_filename, force = T)
 
 datadrivencv::use_datadriven_cv(
   full_name = "Benedict Monteiro",
-  data_location = "https://docs.google.com/spreadsheets/d/1WC2VQGbxqxsNcU06x1DMvFBV2AQZg1BCzF26pKs5qCE/edit?usp=sharing",
+  data_location = gsheets_link,
   # pdf_location = "https://github.com/benedict909/cv/cv.pdf",
   # html_location = "nickstrayer.me/cv/",
   source_location = "https://github.com/benedict909/CV",
-  open_files = F
+  open_files = T
 )
 
 
@@ -45,6 +56,6 @@ pagedown::chrome_print(input = tmp_html_cv_loc,
 
 
 
-file.copy(from = "cv.html", to = "../benedict909.github.io/index.html", overwrite = T)
+if(CV_type == "normal") file.copy(from = "cv.html", to = "../benedict909.github.io/index.html", overwrite = T)
 
 # now push to master using github desktop app on both repos 
