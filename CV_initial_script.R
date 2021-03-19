@@ -2,7 +2,7 @@
 
 setwd("~/Github/CV/")
 
-CV_type = c("normal", "all_exams")[2]
+CV_type = c("normal", "all_exams")[1]
 
 if(CV_type == "normal"){
   pdf_filename = paste0("Benedict_Monteiro_CV.pdf")
@@ -28,7 +28,7 @@ datadrivencv::use_datadriven_cv(
   # pdf_location = "https://github.com/benedict909/cv/cv.pdf",
   # html_location = "nickstrayer.me/cv/",
   source_location = "https://github.com/benedict909/CV",
-  open_files = T
+  open_files = F
 )
 
 
