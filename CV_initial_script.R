@@ -58,5 +58,6 @@ pagedown::chrome_print(input = tmp_html_cv_loc,
 
 
 if(CV_type == "normal") file.copy(from = "cv.html", to = "../benedict909.github.io/index.html", overwrite = T)
+file.copy(from = pdf_filename, to = paste0(gsub(".pdf","",pdf_filename),"_",Sys.Date(),".pdf"), overwrite = T)
 
 # now push to master using github desktop app on both repos 
