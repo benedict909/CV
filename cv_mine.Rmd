@@ -149,3 +149,11 @@ CV %<>% print_section('teaching_positions')
 
 
 
+Publications {data-icon=book}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('academic_articles')
+```
+
+

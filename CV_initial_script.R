@@ -18,6 +18,7 @@ if(CV_type == "all_exams"){
 if(file.exists(pdf_filename)) unlink(pdf_filename, force = T)
 
 # devtools::install_github("nstrayer/datadrivencv")
+# remotes::install_github('mitchelloharawild/icons@v0.1.0') # install icon until nickstrayer updates datadrivencv to account for icon now being called icons
 # run ?datadrivencv::use_datadriven_cv to see more details
 # link: https://docs.google.com/spreadsheets/d/1WC2VQGbxqxsNcU06x1DMvFBV2AQZg1BCzF26pKs5qCE/edit?usp=sharing
 # example: https://docs.google.com/spreadsheets/d/14MQICF2F8-vf8CKPF1m4lyGKO6_thG-4aSwat1e2TWc/edit#gid=917338460
