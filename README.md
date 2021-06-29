@@ -4,7 +4,7 @@ Use `CV_initial_script.R` to plot my CV. Information for the document is stored 
 
 <br> 
 
-R code description from Nick Strayer:
+Package description from [Nick Strayer](https://github.com/nstrayer/cv):
 
 ## My pagedown rendered CV
 
