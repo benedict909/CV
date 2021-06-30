@@ -5,14 +5,13 @@ setwd("~/Github/CV/")
 CV_type = c("normal", "all_exams")[1]
 
 if(CV_type == "normal"){
-  pdf_filename = paste0("Benedict_Monteiro_CV.pdf")
+  pdf_filename = "Benedict_Monteiro_CV.pdf"
   gsheets_link = "https://docs.google.com/spreadsheets/d/1WC2VQGbxqxsNcU06x1DMvFBV2AQZg1BCzF26pKs5qCE/edit?usp=sharing"
 }
 
 if(CV_type == "all_exams"){
-  pdf_filename = paste0("Benedict_Monteiro_CV_all_exams.pdf")
+  pdf_filename = "Benedict_Monteiro_CV_all_exams.pdf"
   gsheets_link = "https://docs.google.com/spreadsheets/d/1wLh4dEm8ZeTY_T68b5-7iaN4jLkzOvnEZ8X9INsQbGk/edit?usp=sharing"
-  
 }
 
 if(file.exists(pdf_filename)) unlink(pdf_filename, force = T)
