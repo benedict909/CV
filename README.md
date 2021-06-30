@@ -1,6 +1,6 @@
 # Code to build my CV
 
-Use `CV_initial_script.R` to plot my CV. Information for the document is stored on [google docs](https://docs.google.com/spreadsheets/d/1WC2VQGbxqxsNcU06x1DMvFBV2AQZg1BCzF26pKs5qCE/edit#gid=917338460). 
+Use `CV_initial_script.R` to plot [my CV](https://benedict909.github.io/). Information for the document is stored on [google docs](https://docs.google.com/spreadsheets/d/1WC2VQGbxqxsNcU06x1DMvFBV2AQZg1BCzF26pKs5qCE/edit#gid=917338460). 
 
 <br> 
 
