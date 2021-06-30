@@ -4,6 +4,7 @@ setwd("~/Github/CV/")
 
 CV_type = c("normal", "all_exams")[1]
 
+# set filenames & link to spreadsheet
 if(CV_type == "normal"){
   pdf_filename = "Benedict_Monteiro_CV.pdf"
   gsheets_link = "https://docs.google.com/spreadsheets/d/1WC2VQGbxqxsNcU06x1DMvFBV2AQZg1BCzF26pKs5qCE/edit?usp=sharing"
@@ -54,8 +55,6 @@ rmarkdown::render("cv_mine.rmd",
 pagedown::chrome_print(input = tmp_html_cv_loc,
                        output = pdf_filename)
 
-
-
 if(CV_type == "normal"){
   file.copy(from = "cv.html", to = "../benedict909.github.io/index.html", overwrite = T)
   file.copy(from = "cv.html", to = file.path("Archive",paste0("cv_",Sys.Date(),".html")), overwrite = T)
@@ -63,5 +62,4 @@ if(CV_type == "normal"){
 file.copy(from = pdf_filename, to = file.path("Archive",paste0(gsub(".pdf","",pdf_filename),"_",Sys.Date(),".pdf")),
           overwrite = T)
 
-
-# now push to master using github desktop app on both repos 
+### now push to master using github desktop app on both repos 
