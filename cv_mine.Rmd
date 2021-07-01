@@ -138,7 +138,7 @@ CV %<>% print_section('research_positions')
 <!-- <br> -->
 <!-- <br> -->
 <!-- <br> -->
-
+<!-- <br> -->
 
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
