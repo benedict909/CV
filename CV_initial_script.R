@@ -7,7 +7,7 @@ CV_type = c("normal", "all_exams")[1]
 # set filenames & link to spreadsheet
 if(CV_type == "normal"){
   pdf_filename = "Benedict_Monteiro_CV.pdf"
-  gsheets_link = "https://docs.google.com/spreadsheets/d/1WC2VQGbxqxsNcU06x1DMvFBV2AQZg1BCzF26pKs5qCE/edit?usp=sharing"
+  gsheets_link = "https://docs.google.com/spreadsheets/d/1WC2VQGbxqxsNcU06x1DMvFBV2AQZg1BCzF26pKs5qCE/edit#gid=917338460"
 }
 
 if(CV_type == "all_exams"){
