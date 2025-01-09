@@ -1,6 +1,6 @@
 # CV R script 
 
-setwd("~/Github/CV/")
+setwd("~/Documents/github/CV/")
 
 CV_type = c("normal", "all_exams")[1]
 
