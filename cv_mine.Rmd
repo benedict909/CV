@@ -7,9 +7,8 @@ params:
     value: true
 output:
   pagedown::html_resume:
-    css: ['dd_cv.css', 'resume']
+    css: ['dd_cv_mine.css', 'resume']
     self_contained: true
-geometry: "left=0cm,right=0cm,top=0cm,bottom=0cm"
 ---
 
 ```{r, include=FALSE}
@@ -36,7 +35,8 @@ if(params$pdf_mode) {
     cat("
 <style>
 :root{
-  --decorator-outer-offset-left: -6.5px;
+  --point-circle-margin-left: 50px;
+  # --point-circle-color: red;
 }
 </style>")
 }
@@ -135,7 +135,7 @@ CV %<>% print_section('research_positions')
 <!-- ``` -->
 
 <!-- These breaks just force a new page so section doesnt get cut off -->
-<!-- <br> -->
+
 <!-- <br> -->
 <!-- <br> -->
 <!-- <br> -->
@@ -147,7 +147,21 @@ Teaching Experience {data-icon=chalkboard-teacher}
 CV %<>% print_section('teaching_positions')
 ```
 
+Conference Presentations {data-icon=person-chalkboard}
+--------------------------------------------------------------------------------
 
+```{r}
+CV %<>% print_section('conference_presentations')
+```
+<br>
+
+Public Outreach {data-icon=bullhorn}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('public_outreach')
+```
+<br>
 
 Publications {data-icon=book}
 --------------------------------------------------------------------------------

@@ -47,15 +47,15 @@ rmarkdown::render("cv_mine.rmd",
 
 # Knit the PDF version to temporary html location
 tmp_html_cv_loc <- fs::file_temp(ext = ".html")
-rmarkdown::render("cv_mine.rmd",
+rmarkdown::render("cv_mine.Rmd",
                   params = list(pdf_mode = TRUE),
                   output_file = tmp_html_cv_loc)
 
 # Convert to PDF using Pagedown
-pagedown::chrome_print(input = tmp_html_cv_loc,
+pagedown::chrome_print(input = tmp_html_cv_loc,browser = "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
                        output = pdf_filename)
 
-if(CV_type == "normal"){
+Ef(CV_type == "normal"){
   file.copy(from = "cv.html", to = "../benedict909.github.io/index.html", overwrite = T)
   file.copy(from = "cv.html", to = file.path("Archive",paste0("cv_",Sys.Date(),".html")), overwrite = T)
 }

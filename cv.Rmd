@@ -34,7 +34,7 @@ if(params$pdf_mode) {
     cat("
 <style>
 :root{
-  --decorator-outer-offset-left: -6.5px;
+  --decorator-outer-offset-left: -50px;
 }
 </style>")
 }
